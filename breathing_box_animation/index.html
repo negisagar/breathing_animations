@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Breathing Box Animation</title>
+    <style>
+        .home-icon, .refresh-icon {
+            position: fixed;
+            top: 20px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .home-icon {
+            left: 20px;
+        }
+        .refresh-icon {
+            right: 20px;
+        }
+        .home-icon:hover, .refresh-icon:hover {
+            color: #ff9900;
+        }
+        .popup-overlay {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s ease;
+        }
+        .popup-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .popup {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        .popup input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            width: 60px;
+        }
+        .popup button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #ff9900;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .popup button:hover {
+            background-color: #ffaa33;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Icon -->
+    <a href="../index.html" class="home-icon"><i class="fas fa-home"></i></a>
+    <!-- Refresh Icon -->
+    <a href="#" class="refresh-icon"><i class="fas fa-sync-alt"></i></a>
+
+    <!-- Breathing Animation Container -->
+    <div class="container">
+        <div class="box">
+            <div class="dot"></div>
+            <div class="gradient"></div>
+            <div class="center-text">Inhale</div>
+        </div>
+    </div>
+    
+    <div class="countdown" id="countdown">3</div>
+
+    <!-- Popup for User Inputs -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup">
+            <h2>Set Breathing Durations (secs)</h2>
+            <div>
+                <label>Inhale:</label>
+                <input type="number" id="inhale-duration" value="5"> secs
+            </div>
+            <div>
+                <label>Hold 1:</label>
+                <input type="number" id="hold1-duration" value="5"> secs
+            </div>
+            <div>
+                <label>Exhale:</label>
+                <input type="number" id="exhale-duration" value="5"> secs
+            </div>
+            <div>
+                <label>Hold 2:</label>
+                <input type="number" id="hold2-duration" value="5"> secs
+            </div>
+            <button id="start-animation">Start</button>
+            <button id="default-settings">Default</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('default-settings').addEventListener('click', function() {
+            document.getElementById('inhale-duration').value = 5;
+            document.getElementById('hold1-duration').value = 5;
+            document.getElementById('exhale-duration').value = 5;
+            document.getElementById('hold2-duration').value = 5;
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

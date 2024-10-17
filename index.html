@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Breathing Animations Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+        .grid-menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .grid-item {
+            padding: 40px;
+            color: #ffffff;
+            background-color: transparent;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .grid-item:hover {
+            background-color: #ff9900;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-menu">
+        <a href="breathing-circle/index.html" class="grid-item">Breathing Circle Animation</a>
+        <a href="breathing_box_animation/index.html" class="grid-item">Breathing Box Animation</a>
+    </div>
+</body>
+</html>
